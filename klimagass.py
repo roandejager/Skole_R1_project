@@ -1,5 +1,6 @@
 import pandas as pd
 import statsmodels.api as sm
+import matplotlib.pyplot as plt
 
 klima = pd.read_csv("figur-1-totalt-klimagass.csv", sep=";", decimal=",")
 
@@ -23,15 +24,15 @@ z6 = lowess(motorfart, aar, frac = 0.2, return_sorted = False)
 z7 = lowess(jordbruk, aar, frac = 0.2, return_sorted = False)
 z8 = lowess(andre, aar, frac = 0.2, return_sorted = False)
 
-plot(aar, olje)
-plot(aar, z1, "r")
-plot(aar, z2, "b")
-plot(aar, z3, "y")
-plot(aar, z4, "g")
-plot(aar, z5, "w")
-plot(aar, z6, "p")
-plot(aar, z7, "r")
-plot(aar, z8, "r")
-xlabel("År")
-ylabel("Temperatur (grader C)")
-show()
+plt.plot(aar, olje)
+plt.plot(aar, z1, "r")
+plt.plot(aar, z2, "b")
+plt.plot(aar, z3, "y")
+plt.plot(aar, z4, "g")
+plt.plot(aar, z5, "w")
+plt.plot(aar, z6, "p")
+plt.plot(aar, z7, "r")
+plt.plot(aar, z8, "r")
+plt.xlabel("År")
+plt.ylabel("Temperatur (grader C)")
+plt.show()
