@@ -45,7 +45,7 @@ plt.plot(aar, z4, "m", label="Motorfart")
 
 plt.xlabel("År")
 plt.ylabel("Million tonn CO2")
-
 plt.legend(loc="upper right")
+plt.grid()
 
 plt.show()
