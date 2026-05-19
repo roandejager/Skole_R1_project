@@ -43,6 +43,11 @@ plt.plot(aar, z2, "b", label="Industri")
 plt.plot(aar, z3, "g", label="Veitrafikk")
 plt.plot(aar, z4, "m", label="Motorfart")
 
+plt.plot(aar, olje, "r")
+plt.plot(aar, industri, "b")
+plt.plot(aar, veitrafikk, "g")
+plt.plot(aar, motorfart, "m")
+
 plt.xlabel("År")
 plt.ylabel("Million tonn CO2")
 plt.legend(loc="upper right")
