@@ -38,7 +38,7 @@ print(f'Gjennomsnittet for industriens CO2-utslipp gjennom årene er {round(i_sn
 print(f'Gjennomsnittet for veitrafikkens CO2-utslipp gjennom årene er {round(v_snitt, 4)}, standardavvik {round(v_s, 4)} og standardfeil {round(v_se, 4)}')
 print(f'Gjennomsnittet for motortrafikkens CO2-utslipp gjennom årene er {round(m_snitt, 4)}, standardavvik {round(m_s, 4)} og standardfeil {round(m_se, 4)}')
 
-plt.plot(aar, z1, "r", label="Olje (Trend)")
+plt.plot(aar, z1, "r", label="Olje og gass")
 plt.plot(aar, z2, "b", label="Industri")
 plt.plot(aar, z3, "g", label="Veitrafikk")
 plt.plot(aar, z4, "m", label="Motorfart")
