@@ -23,6 +23,8 @@ plt.plot(aar, z5, "g", label="Veitrafikk")
 plt.plot(aar, z6, "m", label="Motorfart")
 
 plt.xlabel("År")
+
+
 plt.ylabel("Temperatur (grader C)")
 
 plt.legend(loc="upper left")
