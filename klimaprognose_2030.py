@@ -11,7 +11,7 @@ totalt = df.iloc[:, 1:].values.astype(float).sum(axis=1)
 
 
 # Legg til 2024 fra SSB-oversikten (foreløpige tall)
-aar = np.append(aar, 2024)
+aar = np.append(aar, 2024)  
 totalt = np.append(totalt, 44.6)
 
 
