@@ -34,10 +34,14 @@ i_se = i_s / math.sqrt(n)
 v_se = v_s / math.sqrt(n)
 m_se = m_s / math.sqrt(n)
 
-print(f'Gjennomsnittet for oljens CO2-utslipp gjennom årene er {round(o_snitt, 4)}, standardavvik {round(o_s, 4)} og standardfeil {round(o_se, 4)}')
-print(f'Gjennomsnittet for industriens CO2-utslipp gjennom årene er {round(i_snitt, 4)}, standardavvik {round(i_s, 4)} og standardfeil {round(i_se, 4)}')
-print(f'Gjennomsnittet for veitrafikkens CO2-utslipp gjennom årene er {round(v_snitt, 4)}, standardavvik {round(v_s, 4)} og standardfeil {round(v_se, 4)}')
-print(f'Gjennomsnittet for motortrafikkens CO2-utslipp gjennom årene er {round(m_snitt, 4)}, standardavvik {round(m_s, 4)} og standardfeil {round(m_se, 4)}')
+print(f'Gjennomsnittet for oljens CO2-utslipp gjennom årene er {round(o_snitt, 4)}, '
+      f'standardavvik {round(o_s, 4)} og standardfeil {round(o_se, 4)}')
+print(f'Gjennomsnittet for industriens CO2-utslipp gjennom årene er {round(i_snitt, 4)}, '
+      f'standardavvik {round(i_s, 4)} og standardfeil {round(i_se, 4)}')
+print(f'Gjennomsnittet for veitrafikkens CO2-utslipp gjennom årene er {round(v_snitt, 4)}, '
+      f'standardavvik {round(v_s, 4)} og standardfeil {round(v_se, 4)}')
+print(f'Gjennomsnittet for motortrafikkens CO2-utslipp gjennom årene er {round(m_snitt, 4)}, '
+      f'standardavvik {round(m_s, 4)} og standardfeil {round(m_se, 4)}')
 
 plt.plot(aar, z1, "r", label="Olje og gass")
 plt.plot(aar, z2, "b", label="Industri")
