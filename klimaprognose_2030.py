@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
 
-df = pd.read_csv("figur-1-totalt-klimagass.csv", sep=";", decimal=",")
+df = pd.read_csv("filer_med_data/figur-1-totalt-klimagass.csv", sep=";", decimal=",")
 
 aar = df.iloc[:, 0].values.astype(int)
 totalt = df.iloc[:, 1:].values.astype(float).sum(axis=1)
@@ -112,6 +112,6 @@ ax.axvspan(2025, 2035, alpha=0.06, color="gray", label="Prognoseperiode")
 ax.text(2026, 5, "Prognose", fontsize=9, color="gray", style="italic")
 
 plt.tight_layout()
-plt.savefig("klimaprognose_2030.png", dpi=150, bbox_inches="tight")
-print("\nDiagram lagret som 'klimaprognose_2030.png'")
+plt.savefig("resultater/klimaprognose_2030.png", dpi=150, bbox_inches="tight")
+print("\nDiagram lagret som 'klimaprognose_2030.png' i resultater")
 plt.show()
