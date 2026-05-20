@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import statsmodels.api as sm
 
-klima = pd.read_csv("figur-1-totalt-klimagass.csv", sep=";", decimal=",")
+klima = pd.read_csv("filer_med_data/figur-1-totalt-klimagass.csv", sep=";", decimal=",")
 
 aar = klima.iloc[:, 0]
 olje = klima.iloc[:, 1]
@@ -53,4 +53,8 @@ plt.ylabel("Million tonn CO2")
 plt.legend(loc="upper right")
 plt.grid()
 
+# save filer
+plt.savefig("resultater/klimagass.png", dpi=150, bbox_inches="tight")
+print("\nDiagram lagret som 'klimagass.png' i resultater")
 plt.show()
+

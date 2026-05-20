@@ -7,7 +7,7 @@ from scipy.stats import pearsonr
 
 
 #  last inn alle datasett
-df_klima = pd.read_csv("figur-1-totalt-klimagass.csv", sep=";", decimal=",")
+df_klima = pd.read_csv("filer_med_data/figur-1-totalt-klimagass.csv", sep=";", decimal=",")
 klima = pd.DataFrame({
     "Aar":      df_klima.iloc[:, 0].values.astype(int),
     "Totalt":   df_klima.iloc[:, 1:].values.astype(float).sum(axis=1),
@@ -17,14 +17,14 @@ klima = pd.DataFrame({
 })
 klima.loc[len(klima)] = [2024, 44.6, 11.0, 10.6, 7.5]  # foreløpige SSB-tall
 
-rein = pd.read_csv("reintall_norge.csv", sep=";")
+rein = pd.read_csv("filer_med_data/reintall_norge.csv", sep=";")
 
-ulv = pd.read_csv("ulv_bestand_norge.csv", sep=";", comment="#")
+ulv = pd.read_csv("filer_med_data/ulv_bestand_norge.csv", sep=";", comment="#")
 ulv["Aar"] = ulv["Sesong"].str.split("-").str[-1].astype(int)
 
-elg = pd.read_csv("elg_felt_norge.csv", sep=";", comment="#")
+elg = pd.read_csv("filer_med_data/elg_felt_norge.csv", sep=";", comment="#")
 
-rovdyr = pd.read_csv("norway_carnivore_mortality_2000_2025.csv")
+rovdyr = pd.read_csv("filer_med_data/norway_carnivore_mortality_2000_2025.csv")
 rovdyr["Aar"] = rovdyr["Season"].str.split("-").str[-1].astype(int)
 
 # slå sammen på år
@@ -111,7 +111,7 @@ for i in range(len(dyr_keys)):
 ax.set_title("Korrelasjonsmatrise: Dyrebestander vs. klimagassutslipp (Pearson r)\n"
              "* p<0.05   ** p<0.01   *** p<0.001", fontsize=12, fontweight="bold")
 plt.tight_layout()
-plt.savefig("korrelasjon_matrise.png", dpi=150, bbox_inches="tight")
+plt.savefig("resultater/korrelasjon_matrise.png", dpi=150, bbox_inches="tight")
 print("\nLagret: korrelasjon_matrise.png")
 
 #  Figur 2: Scatter  Ulv vs. totale utslipp (sterkeste korrelasjon)
@@ -141,7 +141,7 @@ for ax, (dk, kk, tittel) in zip(axes, [
     ax.set_facecolor("#f9f9f9")
 
 plt.tight_layout()
-plt.savefig("korrelasjon_scatter.png", dpi=150, bbox_inches="tight")
+plt.savefig("resultater/korrelasjon_scatter.png", dpi=150, bbox_inches="tight")
 print("Lagret: korrelasjon_scatter.png")
 
 #  Figur 3: Alle dyrebestander med trend og prognose
@@ -222,7 +222,7 @@ for idx, (col, label, farge, kortnavn) in enumerate(dyr_plot):
     ax.grid(axis="y", linestyle="--", alpha=0.3)
     ax.axvspan(x[-1] + 1, PROGNOSE_AAR + 1, alpha=0.04, color="gray")
 
-plt.savefig("dyrebestander_prognose.png", dpi=150, bbox_inches="tight")
+plt.savefig("resultater/dyrebestander_prognose.png", dpi=150, bbox_inches="tight")
 print("Lagret: dyrebestander_prognose.png")
 
 #  Figur 4: Ulv + CO2 på dobbel yakse (tydelig visuell sammenheng)
@@ -255,7 +255,7 @@ ax1.set_title(f"Ulvebestand og klimagassutslipp i Norge (r = {r_ulv:+.3f}, p < 0
 ax1.grid(axis="y", linestyle="--", alpha=0.3)
 
 plt.tight_layout()
-plt.savefig("ulv_vs_klimagass.png", dpi=150, bbox_inches="tight")
+plt.savefig("resultater/ulv_vs_klimagass.png", dpi=150, bbox_inches="tight")
 print("Lagret: ulv_vs_klimagass.png")
 
 print("\nAlle figurer lagret. Kjør scriptet for å vise grafene.")
