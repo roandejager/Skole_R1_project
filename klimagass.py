@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import statsmodels.api as sm
 
-klima = pd.read_csv("filer_med_data/figur-1-totalt-klimagass.csv", sep=";", decimal=",")
+klima = pd.read_csv("filer_med_data/figur-1-totalt-klimagass.csv",
+                    sep=";", decimal=",")
 
 aar = klima.iloc[:, 0]
 olje = klima.iloc[:, 1]
