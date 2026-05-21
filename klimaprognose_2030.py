@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
 
-df = pd.read_csv("filer_med_data/figur-1-totalt-klimagass.csv", sep=";", decimal=",")
+df = pd.read_csv("filer_med_data/figur-1-totalt-klimagass.csv",
+                 sep=";", decimal=",")
 
 aar = df.iloc[:, 0].values.astype(int)
 totalt = df.iloc[:, 1:].values.astype(float).sum(axis=1)
